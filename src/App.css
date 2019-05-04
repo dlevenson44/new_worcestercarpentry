@@ -3,7 +3,7 @@ body {
 }
 
 .app-container {
-  background-color: green;
+  background-color: red;
   height: 100vh;
   max-width: 100%;
 }
@@ -30,4 +30,27 @@ body {
   max-width: 60%;
   min-height: 100px;
   width: 275px;
+}
+
+.sidebar-header,
+.sidebar-subheader,
+.sidebar-text,
+.sidebar-link,
+.sidebar-link:visited {
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+  font-family: 'Comfortaa', cursive;
+}
+
+.sidebar-header {
+  font-size: 42px;
+}
+
+#header2 {
+  margin-top: -20px;
+}
+
+.sidebar-subheader {
+  font-size: 28px;
 }
