@@ -16,33 +16,61 @@ class App extends Component {
 
     this.state = {
       selectedPage: 'decks',
-    }
+      showDialog: false,
+    };
+
+    this.handleShowDialog = this.handleShowDialog.bind(this);
     this.pageSelector = this.pageSelector.bind(this);
   }
 
+  handleShowDialog() {
+    console.log('handling dialog')
+    this.setState({ showDialog: !this.state.showDialog });
+  };
+
   pageSelector(e, page) {
     e.preventDefault();
-    this.setState({ selectedPage: page })
-  }
+    this.setState({ selectedPage: page });
+  };
 
   pageRenderer() {
+    const { showDialog } = this.state;
+
     switch(this.state.selectedPage) {
       case 'decks':
-        return <Decks />;
+        return <Decks
+          handleShowDialog={this.handleShowDialog}
+          showDialog={showDialog}
+        />;
       case 'floors':
-        return <Floors />;
+        return <Floors
+          handleShowDialog={this.handleShowDialog}
+          showDialog={showDialog}
+        />;
       case 'remodeling':
-        return <Remodel />
+        return <Remodel
+          handleShowDialog={this.handleShowDialog}
+          showDialog={showDialog}
+        />
       case 'roofing':
-        return <Roofing />;
+        return <Roofing
+          handleShowDialog={this.handleShowDialog}
+          showDialog={showDialog}
+        />;
       case 'siding':
-        return <Siding />;
+        return <Siding
+          handleShowDialog={this.handleShowDialog}
+          showDialog={showDialog}
+        />;
       case 'windows':
-        return <Windows />;
+        return <Windows
+          handleShowDialog={this.handleShowDialog}
+          showDialog={showDialog}
+        />;
       default:
         console.log('unrecognized page');
     }
-  }
+  };
 
   render() {
     return (
