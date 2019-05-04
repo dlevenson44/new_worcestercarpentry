@@ -15,6 +15,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      photoIndex: 0,
       selectedPage: 'decks',
       showDialog: false,
     };
@@ -29,54 +30,58 @@ class App extends Component {
     this.setState({ showDialog: !this.state.showDialog });
   };
 
-  imageSelect(e) {
-    e.preventDefault();
+  imageSelect() {
     console.log('clicked')
   }
 
-  pageSelector(e, page) {
-    e.preventDefault();
+  pageSelector(page) {
     this.setState({ selectedPage: page });
   };
 
   pageRenderer() {
-    const { showDialog } = this.state;
+    const { photoIndex, showDialog } = this.state;
 
     switch(this.state.selectedPage) {
       case 'decks':
         return <Decks
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
+          photoIndex={photoIndex}
           showDialog={showDialog}          
         />;
       case 'floors':
         return <Floors
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
+          photoIndex={photoIndex}
           showDialog={showDialog}          
         />;
       case 'remodeling':
         return <Remodel
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
+          photoIndex={photoIndex}
           showDialog={showDialog}          
         />
       case 'roofing':
         return <Roofing
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
+          photoIndex={photoIndex}
           showDialog={showDialog}          
         />;
       case 'siding':
         return <Siding
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
+          photoIndex={photoIndex}
           showDialog={showDialog}          
         />;
       case 'windows':
         return <Windows
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
+          photoIndex={photoIndex}
           showDialog={showDialog}          
         />;
       default:
