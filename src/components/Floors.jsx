@@ -8,7 +8,7 @@ import Image4 from '../imgs/flooring/flooring4.jpg';
 import Image5 from '../imgs/flooring/flooring2.jpg';
 import Image6 from '../imgs/flooring/flooring5.jpg';
 
-function Floors() {
+function Floors(props) {
   return (
     <div className="section-container">
       <div className="row">
@@ -16,16 +16,19 @@ function Floors() {
           className="small-grid-img"
           alt="worcester-county-carpentry-floors"
           src={Image1}
+          onClick={(e) => props.imageSelect(e)}
         />
         <img
           className="small-grid-img"
           alt="worcester-county-carpentry-floors"
           src={Image2}
+          onClick={(e) => props.imageSelect(e)}
         />
         <img
           className="small-grid-img"
           alt="worcester-county-carpentry-floors"
           src={Image3}
+          onClick={(e) => props.imageSelect(e)}
         />
       </div>
       <div className="row">
@@ -33,16 +36,19 @@ function Floors() {
           className="small-grid-img"
           alt="worcester-county-carpentry-floors"
           src={Image4}
+          onClick={(e) => props.imageSelect(e)}
         />
         <img
           className="small-grid-img"
           alt="worcester-county-carpentry-floors"
           src={Image5}
+          onClick={(e) => props.imageSelect(e)}
         />
         <img
           className="small-grid-img"
           alt="worcester-county-carpentry-floors"
           src={Image6}
+          onClick={(e) => props.imageSelect(e)}
         />
       </div>
     </div>

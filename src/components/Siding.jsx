@@ -8,7 +8,7 @@ import Image4 from '../imgs/siding/siding4.JPG';
 import Image5 from '../imgs/siding/siding8.jpg';
 import Image6 from '../imgs/siding/siding14.JPG';
 
-function Siding() {
+function Siding(props) {
   return (
     <div className="section-container">
       <div className="row">
@@ -16,16 +16,19 @@ function Siding() {
           className="small-grid-img"
           alt="worcester-county-carpentry-siding"
           src={Image1}
+          onClick={(e) => props.imageSelect(e)}
         />
         <img
           className="small-grid-img"
           alt="worcester-county-carpentry-siding"
           src={Image2}
+          onClick={(e) => props.imageSelect(e)}
         />
         <img
           className="small-grid-img"
           alt="worcester-county-carpentry-siding"
           src={Image3}
+          onClick={(e) => props.imageSelect(e)}
         />
       </div>
       <div className="row">
@@ -33,16 +36,19 @@ function Siding() {
           className="small-grid-img"
           alt="worcester-county-carpentry-siding"
           src={Image4}
+          onClick={(e) => props.imageSelect(e)}
         />
         <img
           className="small-grid-img"
           alt="worcester-county-carpentry-siding"
           src={Image5}
+          onClick={(e) => props.imageSelect(e)}
         />
         <img
           className="small-grid-img"
           alt="worcester-county-carpentry-siding"
           src={Image6}
+          onClick={(e) => props.imageSelect(e)}
         />
       </div>
     </div>
