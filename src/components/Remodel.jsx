@@ -9,47 +9,41 @@ import Image5 from '../imgs/repair/repair1.JPG';
 import Image6 from '../imgs/repair/repair2.JPG';
 
 function Remodel(props) {
+  const topRowImages = [
+    Image1,
+    Image2,
+    Image3,
+  ];
+
+  const bottomRowImages = [
+    Image4,
+    Image5,
+    Image6,
+  ];
+
   return (
     <div className="section-container">
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-remodeling"
-          src={Image1}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-remodeling"
-          src={Image2}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-remodeling"
-          src={Image3}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {topRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-remodeling-restoration"
+            onClick={() => props.imageSelect()}
+          />
+        )}
       </div>
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-remodeling"
-          src={Image4}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-remodeling"
-          src={Image5}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-remodeling"
-          src={Image6}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {bottomRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-remodeling-restoration"
+            onClick={() => props.imageSelect()}
+          />  
+        )}
       </div>
     </div>
   );

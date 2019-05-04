@@ -9,47 +9,41 @@ import Image5 from '../imgs/roofing/roofing1.JPG';
 import Image6 from '../imgs/roofing/roofing7.JPG';
 
 function Roofing(props) {
+  const topRowImages = [
+    Image1,
+    Image2,
+    Image3,
+  ];
+
+  const bottomRowImages = [
+    Image4,
+    Image5,
+    Image6,
+  ];
+
   return (
     <div className="section-container">
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-roofing"
-          src={Image1}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-roofing"
-          src={Image2}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-roofing"
-          src={Image3}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {topRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-roofing"
+            onClick={() => props.imageSelect()}
+          />
+        )}
       </div>
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-roofing"
-          src={Image4}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-roofing"
-          src={Image5}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-roofing"
-          src={Image6}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {bottomRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-roofing"
+            onClick={() => props.imageSelect()}
+          />  
+        )}
       </div>
     </div>
   );

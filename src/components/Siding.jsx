@@ -9,47 +9,41 @@ import Image5 from '../imgs/siding/siding8.jpg';
 import Image6 from '../imgs/siding/siding14.JPG';
 
 function Siding(props) {
+  const topRowImages = [
+    Image1,
+    Image2,
+    Image3,
+  ];
+
+  const bottomRowImages = [
+    Image4,
+    Image5,
+    Image6,
+  ];
+
   return (
     <div className="section-container">
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-siding"
-          src={Image1}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-siding"
-          src={Image2}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-siding"
-          src={Image3}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {topRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-siding"
+            onClick={() => props.imageSelect()}
+          />
+        )}
       </div>
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-siding"
-          src={Image4}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-siding"
-          src={Image5}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-siding"
-          src={Image6}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {bottomRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-siding"
+            onClick={() => props.imageSelect()}
+          />  
+        )}
       </div>
     </div>
   );

@@ -9,47 +9,41 @@ import Image5 from '../imgs/windowsdoors/windowsdoors4.jpg';
 import Image6 from '../imgs/remodel/remodel7.jpg';
 
 function Windows(props) {
+  const topRowImages = [
+    Image1,
+    Image2,
+    Image3,
+  ];
+
+  const bottomRowImages = [
+    Image4,
+    Image5,
+    Image6,
+  ];
+
   return (
     <div className="section-container">
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-windows-doors"
-          src={Image1}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-windows-doors"
-          src={Image2}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-windows-doors"
-          src={Image3}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {topRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-windows-doors"
+            onClick={() => props.imageSelect()}
+          />
+        )}
       </div>
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-windows-doors"
-          src={Image4}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-windows-doors"
-          src={Image5}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-windows-doors"
-          src={Image6}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {bottomRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-windows-doors"
+            onClick={() => props.imageSelect()}
+          />  
+        )}
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import Lightbox from 'react-image-lightbox';
 import '../App.css';
 
 import Image1 from '../imgs/decksporches/customdeckstairs1.jpg';
@@ -9,47 +10,41 @@ import Image5 from '../imgs/decksporches/decksporches2.jpg';
 import Image6 from '../imgs/decksporches/decksporches7.jpg';
 
 function Decks(props) {
+  const topRowImages = [
+    Image1,
+    Image2,
+    Image3,
+  ];
+
+  const bottomRowImages = [
+    Image4,
+    Image5,
+    Image6,
+  ];
+
   return (
     <div className="section-container">
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-decks"
-          src={Image1}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-decks"
-          src={Image2}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-decks"
-          src={Image3}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {topRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-decks"
+            onClick={() => props.imageSelect()}
+          />
+        )}
       </div>
       <div className="row">
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-decks"
-          src={Image4}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-decks"
-          src={Image5}
-          onClick={(e) => props.imageSelect(e)}
-        />
-        <img
-          className="small-grid-img"
-          alt="worcester-county-carpentry-decks"
-          src={Image6}
-          onClick={(e) => props.imageSelect(e)}
-        />
+        {bottomRowImages.map(row =>
+          <img
+            className="small-grid-img"
+            src={row}
+            key={row}
+            alt="worcester-county-carpentry-decks"
+            onClick={() => props.imageSelect()}
+          />  
+        )}
       </div>
     </div>
   );
