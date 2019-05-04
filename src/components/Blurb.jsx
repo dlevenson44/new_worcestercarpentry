@@ -10,38 +10,38 @@ function Blurb(props) {
       <ul className="nav-bar">
         <li
           className="nav-item"
-          onClick={(e) => props.pageSelector(e, 'decks')}
+          onClick={() => props.pageSelector('decks')}
           id="left-edge"
         >
           Decks
         </li>
         <li
           className="nav-item"
-          onClick={(e) => props.pageSelector(e, 'floors')}
+          onClick={() => props.pageSelector('floors')}
         >
           Floors
         </li>
         <li
           className="nav-item"
-          onClick={(e) => props.pageSelector(e, 'remodeling')}
+          onClick={() => props.pageSelector('remodeling')}
         >
           Remodeling & Restoration
         </li>
         <li
           className="nav-item"
-          onClick={(e) => props.pageSelector(e, 'roofing')}
+          onClick={() => props.pageSelector('roofing')}
         >
           Roofing
         </li>
         <li
           className="nav-item"
-          onClick={(e) => props.pageSelector(e, 'siding')}
+          onClick={() => props.pageSelector('siding')}
         >
           Siding
         </li>
         <li
           className="nav-item"
-          onClick={(e) => props.pageSelector(e, 'windows')}
+          onClick={() => props.pageSelector('windows')}
           id="right-edge"
         >
           Windows & Doors
