@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../App.css';
 
 function Blurb(props) {
@@ -50,5 +51,9 @@ function Blurb(props) {
     </div>
   );
 }
+
+Blurb.propTypes = {
+  pageSelector: PropTypes.func.isRequired,
+};
 
 export default Blurb;
