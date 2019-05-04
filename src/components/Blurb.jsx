@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 
 function Blurb(props) {
-  console.log('props:', props)
   return (
     <div className="blurb-container">
       <h5 className="blurb-text">

@@ -3,6 +3,12 @@ import './App.css';
 
 import Blurb from './components/Blurb';
 import Sidebar from './components/Sidebar';
+import Decks from './components/Decks';
+import Floors from './components/Floors';
+import Remodel from './components/Remodel';
+import Roofing from './components/Roofing';
+import Siding from './components/Siding';
+import Windows from './components/Windows';
 
 class App extends Component {
   constructor(props) {
@@ -22,23 +28,17 @@ class App extends Component {
   pageRenderer() {
     switch(this.state.selectedPage) {
       case 'decks':
-        console.log('decks');
-        break;
+        return <Decks />;
       case 'floors':
-        console.log('floors');
-        break;
+        return <Floors />;
       case 'remodeling':
-        console.log('remodeling');
-        break;
+        return <Remodel />
       case 'roofing':
-        console.log('roofing');
-        break;
+        return <Roofing />;
       case 'siding':
-        console.log('siding');
-        break;
+        return <Siding />;
       case 'windows':
-        console.log('windows');
-        break;
+        return <Windows />;
       default:
         console.log('unrecognized page');
     }
