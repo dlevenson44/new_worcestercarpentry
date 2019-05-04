@@ -1,12 +1,12 @@
 import React from 'react';
 import '../App.css';
 
-import Image1 from '../imgs/remodel/remodel7.jpg';
+import Image1 from '../imgs/remodel/remodel10.jpg';
 import Image2 from '../imgs/restoration/restoration_1.JPG';
 import Image3 from '../imgs/remodel/remodel11.jpg';
 import Image4 from '../imgs/restoration/restoration_2.JPG';
-import Image5 from '../imgs/remodel/remodel9.jpg';
-import Image6 from '../imgs/remodel/remodel3.jpg';
+import Image5 from '../imgs/repair/repair1.JPG';
+import Image6 from '../imgs/repair/repair2.JPG';
 
 function Remodel() {
   return (
