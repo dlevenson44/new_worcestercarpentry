@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../App.css';
 
 import Image1 from '../imgs/roofing/roofing2.JPG';
@@ -48,5 +49,13 @@ function Roofing(props) {
     </div>
   );
 }
+
+Roofing.propTypes = {
+  handleShowDialog: PropTypes.func.isRequired,
+  imageSelect: PropTypes.func.isRequired,
+  photoIndex: PropTypes.number.isRequired,
+  showDialog: PropTypes.bool.isRequired,
+};
+
 
 export default Roofing;

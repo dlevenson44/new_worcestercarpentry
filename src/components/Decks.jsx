@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Lightbox from 'react-image-lightbox';
 import '../App.css';
 
@@ -49,5 +50,12 @@ function Decks(props) {
     </div>
   );
 }
+
+Decks.propTypes = {
+  handleShowDialog: PropTypes.func.isRequired,
+  imageSelect: PropTypes.func.isRequired,
+  photoIndex: PropTypes.number.isRequired,
+  showDialog: PropTypes.bool.isRequired,
+};
 
 export default Decks;
