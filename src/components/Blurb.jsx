@@ -11,6 +11,7 @@ function Blurb(props) {
         <li
           className="nav-item"
           onClick={(e) => props.pageSelector(e, 'decks')}
+          id="left-edge"
         >
           Decks
         </li>
@@ -41,6 +42,7 @@ function Blurb(props) {
         <li
           className="nav-item"
           onClick={(e) => props.pageSelector(e, 'windows')}
+          id="right-edge"
         >
           Windows & Doors
         </li>

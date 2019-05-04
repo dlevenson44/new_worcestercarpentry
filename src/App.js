@@ -76,8 +76,10 @@ class App extends Component {
     return (
       <div className="app-container">
         <Sidebar />
-        <Blurb pageSelector={this.pageSelector} />
-        {this.pageRenderer()}
+        <div>
+          <Blurb pageSelector={this.pageSelector} />
+          {this.pageRenderer()}
+        </div>
       </div>
     );
   }
