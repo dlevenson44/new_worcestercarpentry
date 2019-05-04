@@ -20,6 +20,7 @@ class App extends Component {
     };
 
     this.handleShowDialog = this.handleShowDialog.bind(this);
+    this.imageSelect = this.imageSelect.bind(this);
     this.pageSelector = this.pageSelector.bind(this);
   }
 
@@ -27,6 +28,11 @@ class App extends Component {
     console.log('handling dialog')
     this.setState({ showDialog: !this.state.showDialog });
   };
+
+  imageSelect(e) {
+    e.preventDefault();
+    console.log('clicked')
+  }
 
   pageSelector(e, page) {
     e.preventDefault();
@@ -40,32 +46,38 @@ class App extends Component {
       case 'decks':
         return <Decks
           handleShowDialog={this.handleShowDialog}
-          showDialog={showDialog}
+          imageSelect={this.imageSelect}
+          showDialog={showDialog}          
         />;
       case 'floors':
         return <Floors
           handleShowDialog={this.handleShowDialog}
-          showDialog={showDialog}
+          imageSelect={this.imageSelect}
+          showDialog={showDialog}          
         />;
       case 'remodeling':
         return <Remodel
           handleShowDialog={this.handleShowDialog}
-          showDialog={showDialog}
+          imageSelect={this.imageSelect}
+          showDialog={showDialog}          
         />
       case 'roofing':
         return <Roofing
           handleShowDialog={this.handleShowDialog}
-          showDialog={showDialog}
+          imageSelect={this.imageSelect}
+          showDialog={showDialog}          
         />;
       case 'siding':
         return <Siding
           handleShowDialog={this.handleShowDialog}
-          showDialog={showDialog}
+          imageSelect={this.imageSelect}
+          showDialog={showDialog}          
         />;
       case 'windows':
         return <Windows
           handleShowDialog={this.handleShowDialog}
-          showDialog={showDialog}
+          imageSelect={this.imageSelect}
+          showDialog={showDialog}          
         />;
       default:
         console.log('unrecognized page');
