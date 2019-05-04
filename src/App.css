@@ -3,7 +3,7 @@ body {
 }
 
 .app-container {
-  background-color: pink;
+  background-color: #EFF0F2;
   height: 100vh;
   max-width: 100%;
   display: flex;
@@ -21,13 +21,13 @@ body {
 .sidebar-container {
   background-color: #214973;
   height: 100vh;
-  /* width: 550px; */
   max-width: 35%;
   overflow: auto;
 }
 
 .logo {
   height: 25vh;
+  margin-left: 175px;
   max-width: 60%;
   min-height: 100px;
   width: 330px;
@@ -61,15 +61,35 @@ body {
 }
 
 .blurb-container {
-  margin-left: 2%;
+  margin-left: 6.5%;
   margin-top: -35%;
-  max-width: 60%;
+  max-width: 50%;
   text-align: center;
 }
 
 .blurb-text {
-  color: white;
+  color: #214973;
   font-family: 'Comfortaa', cursive;
   font-size: 24px;
+  font-weight: bolder;
+}
+
+
+.nav-bar {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid #214973;
+}
+
+.nav-item {
+  color: #214973;
+  border-left: 0.5px solid #214973;
+  border-right: 0.5px solid #214973;
+  padding: 15px;
+}
+
+.nav-item:hover {
+  cursor: pointer;
   font-weight: bolder;
 }
