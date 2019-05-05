@@ -20,7 +20,7 @@ class App extends Component {
     super(props);
 
     this.state = {
-      photoIndex: 0,
+      photoIndex: null,
       selectedPage: 'decks',
       showDialog: false,
     };
@@ -30,9 +30,8 @@ class App extends Component {
     this.pageSelector = this.pageSelector.bind(this);
   }
 
-  handleShowDialog() {
-    console.log('handling dialog')
-    this.setState({ showDialog: !this.state.showDialog });
+  handleShowDialog(x) {
+    this.setState({ showDialog: !this.state.showDialog, photoIndex: x });
   };
 
   imageSelect(x) {
