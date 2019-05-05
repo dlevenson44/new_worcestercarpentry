@@ -24,7 +24,6 @@ function Sectional(props) {
     allImages[5],
   ]
 
-  console.log('all images', props);
   return (
     <div className="section-container">
       <div className="row">
