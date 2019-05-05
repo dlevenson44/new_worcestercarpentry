@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/new_worcestercarpentry/precache-manifest.088625adba813aa770d49b1f77184c2a.js"
+  "/new_worcestercarpentry/precache-manifest.8a77c31e0a95f4c67be7858723750edc.js"
 );
 
 self.addEventListener('message', (event) => {
