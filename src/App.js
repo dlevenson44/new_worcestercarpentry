@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
+import 'react-image-lightbox/style.css';
 
+import {
+  deckImages,
+  flooringImages,
+  remodelImages,
+  roofingImages,
+  sidingImages,
+  windowsImages,
+} from './photos'
 
 import Blurb from './components/Blurb';
+import Sectional from './components/Sectional';
 import Sidebar from './components/Sidebar';
-import Decks from './components/Decks';
-import Floors from './components/Floors';
-import Remodel from './components/Remodel';
-import Roofing from './components/Roofing';
-import Siding from './components/Siding';
-import Windows from './components/Windows';
 
 class App extends Component {
   constructor(props) {
@@ -55,46 +58,52 @@ class App extends Component {
 
     switch(this.state.selectedPage) {
       case 'decks':
-        return <Decks
+        return <Sectional
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
           photoIndex={photoIndex}
-          showDialog={showDialog}          
+          showDialog={showDialog}       
+          allImages={deckImages}
         />;
       case 'floors':
-        return <Floors
+        return <Sectional
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
           photoIndex={photoIndex}
-          showDialog={showDialog}          
+          showDialog={showDialog}         
+          allImages={flooringImages}
         />;
       case 'remodeling':
-        return <Remodel
+        return <Sectional
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
           photoIndex={photoIndex}
-          showDialog={showDialog}          
+          showDialog={showDialog}         
+          allImages={remodelImages}
         />
       case 'roofing':
-        return <Roofing
+        return <Sectional
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
           photoIndex={photoIndex}
-          showDialog={showDialog}          
+          showDialog={showDialog}         
+          allImages={roofingImages}
         />;
       case 'siding':
-        return <Siding
+        return <Sectional
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
           photoIndex={photoIndex}
-          showDialog={showDialog}          
+          showDialog={showDialog}         
+          allImages={sidingImages}
         />;
       case 'windows':
-        return <Windows
+        return <Sectional
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
           photoIndex={photoIndex}
-          showDialog={showDialog}          
+          showDialog={showDialog}         
+          allImages={windowsImages}
         />;
       default:
         console.log('unrecognized page');
