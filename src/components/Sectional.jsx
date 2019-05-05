@@ -54,10 +54,6 @@ function Sectional(props) {
       <div className="row">
         {bottomRowImages.map(({img, id}) =>
           <div key={id}>
-            {console.log('id:', id)}
-            {console.log('id type:', typeof id)}
-            {console.log('img:', img)}
-            {console.log('img type:', typeof img)}
             <img
               className="small-grid-img"
               src={img}
@@ -90,6 +86,7 @@ Sectional.propTypes = {
   photoIndex: PropTypes.number,
   showDialog: PropTypes.bool.isRequired,
   allImages: PropTypes.array.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 Sectional.defaultProps = {
