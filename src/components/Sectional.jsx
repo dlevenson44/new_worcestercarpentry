@@ -10,6 +10,7 @@ function Sectional(props) {
     photoIndex,
     showDialog,
     allImages,
+    type,
   } = props;
 
   const topRowImages = [
@@ -33,7 +34,7 @@ function Sectional(props) {
               className="small-grid-img"
               src={img}
               key={img}
-              alt="worcester-county-carpentry-decks"
+              alt={`worcester-county-carpentry-${type}`}
               onClick={() => handleShowDialog(id)}
             />
             {showDialog && (
@@ -61,7 +62,7 @@ function Sectional(props) {
               className="small-grid-img"
               src={img}
               key={id}
-              alt="worcester-county-carpentry-decks"
+              alt={`worcester-county-carpentry-${type}`}
               onClick={() => handleShowDialog(id)}
             />
             {showDialog && (

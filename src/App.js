@@ -61,8 +61,9 @@ class App extends Component {
           handleShowDialog={this.handleShowDialog}
           imageSelect={this.imageSelect}
           photoIndex={photoIndex}
-          showDialog={showDialog}       
+          showDialog={showDialog}   
           allImages={deckImages}
+          type={'decks-patios'}
         />;
       case 'floors':
         return <Sectional
@@ -71,6 +72,7 @@ class App extends Component {
           photoIndex={photoIndex}
           showDialog={showDialog}         
           allImages={flooringImages}
+          type={'floors'}
         />;
       case 'remodeling':
         return <Sectional
@@ -79,6 +81,7 @@ class App extends Component {
           photoIndex={photoIndex}
           showDialog={showDialog}         
           allImages={remodelImages}
+          type={'remodeling-restoration'}
         />
       case 'roofing':
         return <Sectional
@@ -87,6 +90,7 @@ class App extends Component {
           photoIndex={photoIndex}
           showDialog={showDialog}         
           allImages={roofingImages}
+          type={'roofing'}
         />;
       case 'siding':
         return <Sectional
@@ -95,6 +99,7 @@ class App extends Component {
           photoIndex={photoIndex}
           showDialog={showDialog}         
           allImages={sidingImages}
+          type={'siding'}
         />;
       case 'windows':
         return <Sectional
@@ -103,6 +108,7 @@ class App extends Component {
           photoIndex={photoIndex}
           showDialog={showDialog}         
           allImages={windowsImages}
+          type={'windows-doors'}
         />;
       default:
         console.log('unrecognized page');
