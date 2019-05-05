@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
+
 
 import Blurb from './components/Blurb';
 import Sidebar from './components/Sidebar';
@@ -30,8 +32,18 @@ class App extends Component {
     this.setState({ showDialog: !this.state.showDialog });
   };
 
-  imageSelect() {
-    console.log('clicked')
+  imageSelect(x) {
+    const { photoIndex } = this.state;
+
+    if (x === 'next') {
+      this.setState({
+        photoIndex: (photoIndex + 1) % 6,
+      })
+    } else {
+      this.setState({
+        photoIndex: (photoIndex + 6 - 1) % 6,
+      })
+    }
   }
 
   pageSelector(page) {
