@@ -13,62 +13,71 @@ function Sectional(props) {
   } = props;
 
   const topRowImages = [
-    allImages[0],
-    allImages[1],
-    allImages[2],
+    { id: 0, img: allImages[0]},
+    { id: 1, img: allImages[1]},
+    { id: 2, img: allImages[2]},
   ];
 
   const bottomRowImages = [
-    allImages[3],
-    allImages[4],
-    allImages[5],
+    { id: 3, img: allImages[3]},
+    { id: 4, img: allImages[4]},
+    { id: 5, img: allImages[5]},
   ]
 
   return (
     <div className="section-container">
       <div className="row">
-        {topRowImages.map((row, index) =>
-          // {console.log('index:', index)}
-          <img
-            className="small-grid-img"
-            src={row}
-            key={index}
-            alt="worcester-county-carpentry-decks"
-            onClick={() => handleShowDialog()}
-          />
-          // {console.log('index:', index)}
-        )}
-        {showDialog && (
-          <Lightbox
-            mainSrc={allImages[photoIndex]}
-            nextSrc={allImages[(photoIndex + 1) % allImages.length]}
-            prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
-            onCloseRequest={() => handleShowDialog()}
-            onMovePrevRequest={() => imageSelect('prev')}
-            onMoveNextRequest={() => imageSelect('next')}
-          />
+        {topRowImages.map(({img, id}) => 
+          <div key={img}>
+            <img
+              className="small-grid-img"
+              src={img}
+              key={img}
+              alt="worcester-county-carpentry-decks"
+              onClick={() => handleShowDialog(id)}
+            />
+            {showDialog && (
+              <Lightbox
+                mainSrc={allImages[photoIndex]}
+                nextSrc={allImages[(photoIndex + 1) % allImages.length]}
+                prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
+                onCloseRequest={() => handleShowDialog(null)}
+                onMovePrevRequest={() => imageSelect('prev')}
+                onMoveNextRequest={() => imageSelect('next')}
+                key={id}
+              />
+            )}
+          </div>
         )}
       </div>
       <div className="row">
-        {bottomRowImages.map(row =>
-          <img
-            className="small-grid-img"
-            src={row}
-            key={row}
-            alt="worcester-county-carpentry-decks"
-            onClick={() => handleShowDialog()}
-          />  
+        {bottomRowImages.map(({img, id}) =>
+          <div key={id}>
+            {console.log('id:', id)}
+            {console.log('id type:', typeof id)}
+            {console.log('img:', img)}
+            {console.log('img type:', typeof img)}
+            <img
+              className="small-grid-img"
+              src={img}
+              key={id}
+              alt="worcester-county-carpentry-decks"
+              onClick={() => handleShowDialog(id)}
+            />
+            {showDialog && (
+            <Lightbox
+              mainSrc={allImages[photoIndex]}
+              nextSrc={(allImages[(photoIndex + 1) % allImages.length])}
+              prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
+              onCloseRequest={() => handleShowDialog(null)}
+              onMovePrevRequest={() => imageSelect('prev')}
+              onMoveNextRequest={() => imageSelect('next')}
+              key={img}
+            />
+            )}
+          </div>
         )}
-        {showDialog && (
-          <Lightbox
-            mainSrc={allImages[photoIndex]}
-            nextSrc={allImages[(photoIndex + 1) % allImages.length]}
-            prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
-            onCloseRequest={() => handleShowDialog()}
-            onMovePrevRequest={() => imageSelect('prev')}
-            onMoveNextRequest={() => imageSelect('next')}
-          />
-        )}
+
       </div>
     </div>
   );
@@ -77,9 +86,13 @@ function Sectional(props) {
 Sectional.propTypes = {
   handleShowDialog: PropTypes.func.isRequired,
   imageSelect: PropTypes.func.isRequired,
-  photoIndex: PropTypes.number.isRequired,
+  photoIndex: PropTypes.number,
   showDialog: PropTypes.bool.isRequired,
   allImages: PropTypes.array.isRequired,
 };
+
+Sectional.defaultProps = {
+  photoIndex: null,
+}
 
 export default Sectional;
