@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Lightbox from 'react-image-lightbox';
 import '../App.css';
 
 import Image1 from '../imgs/windowsdoors/windowsdoors2.jpg';
@@ -10,6 +11,13 @@ import Image5 from '../imgs/windowsdoors/windowsdoors4.jpg';
 import Image6 from '../imgs/remodel/remodel7.jpg';
 
 function Windows(props) {
+  const { 
+    handleShowDialog,
+    imageSelect,
+    photoIndex,
+    showDialog
+  } = props;
+  
   const topRowImages = [
     Image1,
     Image2,
@@ -21,6 +29,8 @@ function Windows(props) {
     Image5,
     Image6,
   ];
+
+  const allImages = topRowImages.concat(bottomRowImages);
 
   return (
     <div className="section-container">
@@ -34,6 +44,16 @@ function Windows(props) {
             onClick={() => props.imageSelect()}
           />
         )}
+        {showDialog && (
+          <Lightbox
+            mainSrc={allImages[photoIndex]}
+            nextSrc={allImages[(photoIndex + 1) % allImages.length]}
+            prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
+            onCloseRequest={() => handleShowDialog()}
+            onMovePrevRequest={() => imageSelect('prev')}
+            onMoveNextRequest={() => imageSelect('next')}
+          />
+        )}
       </div>
       <div className="row">
         {bottomRowImages.map(row =>
@@ -44,6 +64,16 @@ function Windows(props) {
             alt="worcester-county-carpentry-windows-doors"
             onClick={() => props.imageSelect()}
           />  
+        )}
+        {showDialog && (
+          <Lightbox
+            mainSrc={allImages[photoIndex]}
+            nextSrc={allImages[(photoIndex + 1) % allImages.length]}
+            prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
+            onCloseRequest={() => handleShowDialog()}
+            onMovePrevRequest={() => imageSelect('prev')}
+            onMoveNextRequest={() => imageSelect('next')}
+          />
         )}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Lightbox from 'react-image-lightbox';
 import '../App.css';
 
 import Image1 from '../imgs/roofing/roofing2.JPG';
@@ -10,6 +11,13 @@ import Image5 from '../imgs/roofing/roofing1.JPG';
 import Image6 from '../imgs/roofing/roofing7.JPG';
 
 function Roofing(props) {
+  const { 
+    handleShowDialog,
+    imageSelect,
+    photoIndex,
+    showDialog
+  } = props;
+
   const topRowImages = [
     Image1,
     Image2,
@@ -22,6 +30,8 @@ function Roofing(props) {
     Image6,
   ];
 
+  const allImages = topRowImages.concat(bottomRowImages);
+
   return (
     <div className="section-container">
       <div className="row">
@@ -31,7 +41,17 @@ function Roofing(props) {
             src={row}
             key={row}
             alt="worcester-county-carpentry-roofing"
-            onClick={() => props.imageSelect()}
+            onClick={() => handleShowDialog()}
+          />
+        )}
+        {showDialog && (
+          <Lightbox
+            mainSrc={allImages[photoIndex]}
+            nextSrc={allImages[(photoIndex + 1) % allImages.length]}
+            prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
+            onCloseRequest={() => handleShowDialog()}
+            onMovePrevRequest={() => imageSelect('prev')}
+            onMoveNextRequest={() => imageSelect('next')}
           />
         )}
       </div>
@@ -42,8 +62,18 @@ function Roofing(props) {
             src={row}
             key={row}
             alt="worcester-county-carpentry-roofing"
-            onClick={() => props.imageSelect()}
+            onClick={() => handleShowDialog()}
           />  
+        )}
+        {showDialog && (
+          <Lightbox
+            mainSrc={allImages[photoIndex]}
+            nextSrc={allImages[(photoIndex + 1) % allImages.length]}
+            prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
+            onCloseRequest={() => handleShowDialog()}
+            onMovePrevRequest={() => imageSelect('prev')}
+            onMoveNextRequest={() => imageSelect('next')}
+          />
         )}
       </div>
     </div>

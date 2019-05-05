@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Lightbox from 'react-image-lightbox';
 import '../App.css';
+import 'react-image-lightbox/style.css'; // This only needs to be imported once in your app
+
 
 import Image1 from '../imgs/decksporches/customdeckstairs1.jpg';
 import Image2 from '../imgs/decksporches/decksporches4.jpg';
@@ -11,6 +13,13 @@ import Image5 from '../imgs/decksporches/decksporches2.jpg';
 import Image6 from '../imgs/decksporches/decksporches7.jpg';
 
 function Decks(props) {
+  const { 
+    handleShowDialog,
+    imageSelect,
+    photoIndex,
+    showDialog
+  } = props;
+
   const topRowImages = [
     Image1,
     Image2,
@@ -23,6 +32,8 @@ function Decks(props) {
     Image6,
   ];
 
+  const allImages = topRowImages.concat(bottomRowImages);
+
   return (
     <div className="section-container">
       <div className="row">
@@ -32,7 +43,17 @@ function Decks(props) {
             src={row}
             key={row}
             alt="worcester-county-carpentry-decks"
-            onClick={() => props.imageSelect()}
+            onClick={() => handleShowDialog()}
+          />
+        )}
+        {showDialog && (
+          <Lightbox
+            mainSrc={allImages[photoIndex]}
+            nextSrc={allImages[(photoIndex + 1) % allImages.length]}
+            prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
+            onCloseRequest={() => handleShowDialog()}
+            onMovePrevRequest={() => imageSelect('prev')}
+            onMoveNextRequest={() => imageSelect('next')}
           />
         )}
       </div>
@@ -43,8 +64,18 @@ function Decks(props) {
             src={row}
             key={row}
             alt="worcester-county-carpentry-decks"
-            onClick={() => props.imageSelect()}
+            onClick={() => handleShowDialog()}
           />  
+        )}
+        {showDialog && (
+          <Lightbox
+            mainSrc={allImages[photoIndex]}
+            nextSrc={allImages[(photoIndex + 1) % allImages.length]}
+            prevSrc={allImages[(photoIndex + allImages.length - 1) % allImages.length]}
+            onCloseRequest={() => handleShowDialog()}
+            onMovePrevRequest={() => imageSelect('prev')}
+            onMoveNextRequest={() => imageSelect('next')}
+          />
         )}
       </div>
     </div>
