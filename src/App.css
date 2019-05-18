@@ -129,6 +129,10 @@ body {
   cursor: pointer;
 }
 
+.mobile-nav-container {
+  display: none;
+}
+
 @media only screen and (max-width: 420px) {
   .app-container {
     flex-direction: column;
@@ -143,11 +147,25 @@ body {
 
   .sidebar-header,
   .sidebar-subheader,
-  .blurb-text {
+  .blurb-text,
+  .nav-bar {
     display: none;
   }
 
   .row {
     flex-direction: row;
+  }
+
+  .icon {
+    position: absolute;
+    margin-top: -375px;
+    margin-left: 70px;
+  }
+
+  .hamburger {
+    background-color: white;
+    margin: 6px 0;
+    height: 5px;
+    width: 35px;
   }
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../App.css';
 
+import MobileNavBar from './MobileNavBar';
+
 function Blurb(props) {
   return (
     <div className="blurb-container">
@@ -48,6 +50,7 @@ function Blurb(props) {
           Windows & Doors
         </li>
       </ul>
+      <MobileNavBar pageSelector={props.pageSelector}/>
     </div>
   );
 }
