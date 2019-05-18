@@ -145,6 +145,10 @@ body {
     width: 100vh;
   }
 
+  .section-container {
+    margin-left: 72.5px;
+  }
+
   .sidebar-header,
   .sidebar-subheader,
   .blurb-text,
@@ -153,7 +157,12 @@ body {
   }
 
   .row {
-    flex-direction: row;
+    flex-direction: column;
+  }
+
+  .small-grid-img {
+    height: 225px;
+    width: 225px;
   }
 
   .top-nav {
@@ -183,7 +192,7 @@ body {
   .icon {
     position: fixed;
     margin-top: -375px;
-    margin-left: 70px;
+    margin-left: 210px;
   }
 
   .hamburger {
