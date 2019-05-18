@@ -156,8 +156,31 @@ body {
     flex-direction: row;
   }
 
+  .top-nav {
+    display: contents;
+  }
+
+  .mobile-nav-container {
+    display: block;
+    position: fixed;
+    margin-top: -335px;
+    list-style-type: none;
+    color: white;
+    font-weight: bolder;
+    margin-left: -95px;
+    background-color: #214973;
+    border: solid 2.5px white;
+    width: 420px;
+  }
+
+  .mobile-nav {
+    line-height: 1.75;
+    border: solid 1px white;
+    margin-left: -15px;
+  }
+
   .icon {
-    position: absolute;
+    position: fixed;
     margin-top: -375px;
     margin-left: 70px;
   }

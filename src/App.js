@@ -23,11 +23,13 @@ class App extends Component {
       photoIndex: null,
       selectedPage: 'decks',
       showDialog: false,
+      displayMobileNav: false,
     };
 
     this.handleShowDialog = this.handleShowDialog.bind(this);
     this.imageSelect = this.imageSelect.bind(this);
     this.pageSelector = this.pageSelector.bind(this);
+    this.toggleMobileNav = this.toggleMobileNav.bind(this);
   }
 
   handleShowDialog(x) {
@@ -46,6 +48,10 @@ class App extends Component {
         photoIndex: (photoIndex + 6 - 1) % 6,
       })
     }
+  }
+
+  toggleMobileNav() {
+    this.setState({ displayMobileNav: !this.state.displayMobileNav })
   }
 
   pageSelector(page) {
@@ -120,7 +126,11 @@ class App extends Component {
       <div className="app-container">
         <Sidebar />
         <div>
-          <Blurb pageSelector={this.pageSelector} />
+          <Blurb
+            pageSelector={this.pageSelector}
+            displayMobileNav={this.state.displayMobileNav}
+            toggleMobileNav={this.toggleMobileNav}
+          />
           {this.pageRenderer()}
         </div>
       </div>

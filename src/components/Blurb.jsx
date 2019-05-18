@@ -50,7 +50,11 @@ function Blurb(props) {
           Windows & Doors
         </li>
       </ul>
-      <MobileNavBar pageSelector={props.pageSelector}/>
+      <MobileNavBar
+        pageSelector={props.pageSelector}
+        displayMobileNav={props.displayMobileNav}
+        toggleMobileNav={props.toggleMobileNav}
+      />
     </div>
   );
 }
