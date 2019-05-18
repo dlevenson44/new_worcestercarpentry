@@ -174,9 +174,10 @@ body {
   }
 
   .mobile-nav {
-    line-height: 1.75;
+    line-height: 2;
     border: solid 1px white;
     margin-left: -15px;
+    font-size: 26px;
   }
 
   .icon {

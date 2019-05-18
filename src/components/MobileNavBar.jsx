@@ -10,37 +10,37 @@ function MobileNavBar(props) {
         <ul className="mobile-nav-container">
           <li
             className="mobile-nav"
-            onClick={() => props.pageSelector('decks')}
+            onClick={() => props.mobilePageSelector('decks')}
           >
             Decks
           </li>
           <li
             className="mobile-nav"
-            onClick={() => props.pageSelector('floors')}
+            onClick={() => props.mobilePageSelector('floors')}
           >
             Floors
           </li>
           <li
             className="mobile-nav"
-            onClick={() => props.pageSelector('remodeling')}
+            onClick={() => props.mobilePageSelector('remodeling')}
           >
             Remodeling & Restoration
           </li>
           <li
             className="mobile-nav"
-            onClick={() => props.pageSelector('roofing')}
+            onClick={() => props.mobilePageSelector('roofing')}
           >
             Roofing
           </li>
           <li
             className="mobile-nav"
-            onClick={() => props.pageSelector('siding')}
+            onClick={() => props.mobilePageSelector('siding')}
           >
             Siding
           </li>
           <li
             className="mobile-nav"
-            onClick={() => props.pageSelector('windows')}
+            onClick={() => props.mobilePageSelector('windows')}
           >
             Windows & Doors
           </li>

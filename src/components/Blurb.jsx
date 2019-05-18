@@ -51,7 +51,7 @@ function Blurb(props) {
         </li>
       </ul>
       <MobileNavBar
-        pageSelector={props.pageSelector}
+        mobilePageSelector={props.mobilePageSelector}
         displayMobileNav={props.displayMobileNav}
         toggleMobileNav={props.toggleMobileNav}
       />

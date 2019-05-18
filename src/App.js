@@ -30,6 +30,7 @@ class App extends Component {
     this.imageSelect = this.imageSelect.bind(this);
     this.pageSelector = this.pageSelector.bind(this);
     this.toggleMobileNav = this.toggleMobileNav.bind(this);
+    this.mobilePageSelector = this.mobilePageSelector.bind(this);
   }
 
   handleShowDialog(x) {
@@ -52,6 +53,13 @@ class App extends Component {
 
   toggleMobileNav() {
     this.setState({ displayMobileNav: !this.state.displayMobileNav })
+  }
+
+  mobilePageSelector(page) {
+    this.setState({
+      selectedPage: page,
+      displayMobileNav: false,
+    })
   }
 
   pageSelector(page) {
@@ -130,6 +138,7 @@ class App extends Component {
             pageSelector={this.pageSelector}
             displayMobileNav={this.state.displayMobileNav}
             toggleMobileNav={this.toggleMobileNav}
+            mobilePageSelector={this.mobilePageSelector}
           />
           {this.pageRenderer()}
         </div>
