@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1b6b93d2d14fd16b79a6d36a36a812ba",
+    "revision": "919e79a414892c7e9b81a4f742826500",
     "url": "/new_worcestercarpentry/index.html"
   },
   {
@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/new_worcestercarpentry/static/css/2.415e0132.chunk.css"
   },
   {
-    "revision": "9541fef9d6a1266300f5",
-    "url": "/new_worcestercarpentry/static/css/main.81e53b9d.chunk.css"
+    "revision": "d11c976dd8b5321ae2b8",
+    "url": "/new_worcestercarpentry/static/css/main.cc3d37ce.chunk.css"
   },
   {
     "revision": "d8733859a42e787663fb",
     "url": "/new_worcestercarpentry/static/js/2.87b5017c.chunk.js"
   },
   {
-    "revision": "9541fef9d6a1266300f5",
-    "url": "/new_worcestercarpentry/static/js/main.27fb2373.chunk.js"
+    "revision": "d11c976dd8b5321ae2b8",
+    "url": "/new_worcestercarpentry/static/js/main.219f42ea.chunk.js"
   },
   {
     "revision": "199f610f529967922855",
