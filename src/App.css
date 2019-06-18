@@ -3,7 +3,7 @@ body {
 }
 
 .app-container {
-  background-color: #EFF0F2;
+  background-color: rgba(239, 240, 242, 1);
   height: 100vh;
   max-width: 100%;
   display: flex;
@@ -19,7 +19,7 @@ body {
 }
 
 .sidebar-container {
-  background-color: #214973;
+  background-color: rgba(33, 73, 115, 1);
   height: 100vh;
   max-width: 35%;
   overflow: auto;
@@ -66,7 +66,7 @@ body {
 }
 
 .blurb-text {
-  color: #214973;
+  color: rgba(33, 73, 115, 1);
   font-family: 'Comfortaa', cursive;
   font-size: 24px;
   font-weight: bolder;
@@ -83,32 +83,32 @@ body {
 
 .nav-item {
   color: #214973;
-  border-left: 0.5px solid #214973;
-  border-right: 0.5px solid #214973;
+  border-left: 0.5px solid rgba(33, 73, 115, 1);
+  border-right: 0.5px solid rgba(33, 73, 115, 1);
   padding: 15px;
 }
 
 .nav-item:hover {
-  border-left: 5px solid #214973;
-  border-right: 5px solid #214973;
+  border-left: 5px solid rgba(33, 73, 115, 1);
+  border-right: 5px solid rgba(33, 73, 115, 1);
   cursor: pointer;
   font-weight: bolder;
 }
 
 #left-edge {
-  border-left: 2px solid #214973;
+  border-left: 2px solid rgba(33, 73, 115, 1);
 }
 
 #right-edge {
-  border-right: 2px solid #214973;
+  border-right: 2px solid rgba(33, 73, 115, 1);
 }
 
 #left-edge:hover {
-  border-left: 6px solid #214973;
+  border-left: 6px solid rgba(33, 73, 115, 1);
 }
 
 #right-edge:hover {
-  border-right: 6px solid #214973;
+  border-right: 6px solid rgba(33, 73, 115, 1);
 }
 
 .section-container {
@@ -137,6 +137,7 @@ body {
   .app-container {
     flex-direction: column;
     align-items: end;
+    height: 305.5vh;
   }
 
   .sidebar-container {
@@ -158,6 +159,7 @@ body {
 
   .row {
     flex-direction: column;
+    margin-left: -23px;
   }
 
   .small-grid-img {
@@ -172,17 +174,18 @@ body {
   .mobile-nav-container {
     display: block;
     position: fixed;
-    margin-top: -335px;
+    margin-top: -355px;
     list-style-type: none;
     color: white;
     font-weight: bolder;
-    margin-left: -95px;
-    background-color: #214973;
+    margin-left: 15px;
+    background-color: rgba(33, 73, 115, 1);
     border: solid 2.5px white;
-    width: 420px;
+    width: 330px;
   }
 
   .mobile-nav {
+    background-color: rgba(33, 73, 115, 1);
     line-height: 2;
     border: solid 1px white;
     margin-left: -15px;
@@ -191,8 +194,8 @@ body {
 
   .icon {
     position: fixed;
-    margin-top: -375px;
-    margin-left: 210px;
+    margin-top: -355px;
+    margin-left: 170px;
   }
 
   .hamburger {

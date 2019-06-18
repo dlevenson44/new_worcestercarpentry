@@ -48,14 +48,16 @@ function MobileNavBar(props) {
 
       )}
 
-      <p
-        className="icon"
-        onClick={props.toggleMobileNav}
-      >
-        <div className="hamburger" />
-        <div className="hamburger" />
-        <div className="hamburger" />
-      </p>
+      {!props.displayMobileNav && (
+        <p
+          className="icon"
+          onClick={props.toggleMobileNav}
+        >
+          <div className="hamburger" />
+          <div className="hamburger" />
+          <div className="hamburger" />
+        </p>
+      )}
     </div>
   );
 }
